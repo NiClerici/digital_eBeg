@@ -1,0 +1,2 @@
+src/outputs_best/model_final.pth filter=lfs diff=lfs merge=lfs -text
+prototyp/WebInterface/cnn/model_final.pth filter=lfs diff=lfs merge=lfs -text
