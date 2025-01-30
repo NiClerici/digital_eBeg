@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>eBau Formular</title>
+</head>
+<body>
+<div class="container">
+  <!-- Navigation -->
+  <nav class="navigation">
+    <button data-target="project">Projekt</button>
+    <button data-target="owner">Eigentümer</button>
+    <button data-target="plan">Vorhaben</button>
+    <button data-target="regulations">Vorschriften</button>
+  </nav>
+
+  <!-- Projektinformationen -->
+  <section id="project" class="slide active project">
+    <h1>Projektinformationen</h1>
+    <div class="form-row">
+      <select id="gesuchstyp">
+        <option value="" disabled selected hidden>Gesuchstyp</option>
+        <option value="type1">Bauvoranfrage</option>
+        <option value="type2">Baugesuch</option>
+        <option value="type3">generelles Baugesuch</option>
+      </select>
+      <input type="text" id="projektort" placeholder="Projektort">
+    </div>
+    <div class="form-row">
+      <input type="text" id="projektstrasse" placeholder="Projektstrasse">
+      <input type="text" id="parzellennummer" placeholder="Parzellennummer">
+    </div>
+
+    <!-- Projektverfasser same Slide as Projekt-->
+    <h1>Projektverfasser</h1>
+    <div class="form-row">
+      <input type="text" id="verfasser_name" placeholder="Name">
+      <input type="text" id="verfasser_tel" placeholder="Tel. Nr.">
+    </div>
+    <div class="form-row">
+      <input type="text" id="verfasser_adresse" placeholder="Adresse">
+      <input type="text" id="verfasser_email" placeholder="E-Mail">
+    </div>
+  </section>
+
+  <!-- Eigentümer -->
+  <section id="owner" class="slide project">
+    <h1>Eigentümer / Bauherren</h1>
+    <div class="form-row">
+      <input type="text" id="eigentumer_name" placeholder="Name">
+      <input type="text" id="eigentumer_tel" placeholder="Tel. Nr.">
+    </div>
+    <div class="form-row">
+      <input type="text" id="eigentumer_adresse" placeholder="Adresse">
+      <input type="text" id="eigentumer_email" placeholder="E-Mail">
+    </div>
+  </section>
+
+  <!-- Vorhaben -->
+  <section id="plan" class="slide project">
+    <h1>Vorhaben</h1>
+    <div class="form-row">
+      <input type="text" id="baubeschrieb" placeholder="Baubeschrieb: Neubau Um- und Ausbau Umnutzung Erweiterung Abbruch">
+      <input type="text" id="technische_anlagen" placeholder="Technische Anlagen Innenumbau schützens-/erhaltenswerte Bauten Andere">
+    </div>
+    <div class="form-row">
+      <input type="text" id="nutzung" placeholder="Nutzung: Gewerbe Landwirtschaft Wohnen Industrie Dienstleistung Andere">
+      <textarea id="umschreibung" placeholder="Umschreibung des Bauvorhabens und der vorgesehenen Nutzung:"></textarea>
+    </div>
+    <div class="form-row">
+      <textarea id="bisherige_nutzung" placeholder="Bisherige Nutzung (insb. Dachstock):"></textarea>
+      <input type="text" id="fundation" placeholder="Fundation: System:">
+    </div>
+    <div class="form-row">
+      <input type="text" id="tragkonstruktion" placeholder="Tragkonstruktion: Stützen: Wände: Decken:">
+      <input type="text" id="fassaden" placeholder="Fassaden: Material: Farbe:">
+    </div>
+    <div class="form-row">
+      <input type="text" id="dach" placeholder="Dach: Form: Neigung: Material: Farbe:">
+      <input type="text" id="baukosten" placeholder="Baukosten Fr.">
+      <input type="text" id="gebaudevolumen" placeholder="Gebäudevolumen GV m3">
+    </div>
+  </section>
+
+  <!-- Vorschriften -->
+  <section id="regulations" class="slide project">
+    <h1>Vorschriften</h1>
+    <!-- Add your content here -->
+  </section>
+
+  <!-- Progress Bar -->
+  <div class="progress-bar">
+    <div class="progress"></div>
+  </div>
+
+  <!-- Upload-Bereich -->
+  <section class="upload">
+    <div class="upload-text">
+      <h1>Upload</h1>
+      <p>Folgende Pläne müssen hochgeladen werden:</p>
+      <ul>
+        <li>Plan *1</li>
+        <li>Plan *2</li>
+        <li>Plan *3</li>
+        <li>Plan *4</li>
+        <li>Plan *5</li>
+      </ul>
+      <div id="result"></div>
+    </div>
+    <div class="upload-cloud">
+      <span>☁️</span>
+      <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" id="fileInput" name="file" accept="image/*">
+        <button type="submit">Upload</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Overview Button -->
+  <button id="showOverview">Übersicht anzeigen</button>
+
+  <!-- Overview Section -->
+  <section id="overview" class="slide project">
+    <h1>Übersicht</h1>
+    <div id="overviewContent"></div>
+  </section>
+
+  <!-- Progress Bar -->
+  <div class="progress-bar">
+    <div class="progress" id="progress"></div>
+  </div>
+
+</div>
+
+<script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

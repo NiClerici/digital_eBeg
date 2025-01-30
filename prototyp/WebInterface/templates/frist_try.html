@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <title>eBau Plan-Detector</title>
+</head>
+<body>
+  <!-- Header -->
+  <header class="bg-transparent text-black text-center mb-5"
+  style="margin-top:5rem">
+    <h1>Willkommen zu meinem eBau Plan-Detector</h1>
+    <p>Dies ist ein Prototyp!</p>
+    <p>Welcher automatisch aus jeden Situationsplan die Normen prüft!</p>
+
+  </header>
+
+  <!-- Hauptcontainer -->
+  <div class="container">
+    <!-- Upload-Bereich -->
+    <section class="upload">
+      <div class="card shadow-lg p-4 mb-5">
+        <h2 class="text-center mb-4">Upload</h2>
+        <div class="d-flex justify-content-center">
+          <!-- Upload-Cloud -->
+          <div class="d-flex flex-column align-items-center border border-dashed rounded p-5 bg-light">
+            <i class="bi bi-cloud-upload fs-1 text-primary mb-3"></i>
+             <form id="uploadForm" enctype="multipart/form-data" method="POST" action="/upload" class="text-center">
+              <input type="file" id="fileInput" name="file" class="form-control mb-3" accept="image/*">
+              <button type="submit" class="btn btn-light">Datei hochladen</button>
+            </form>
+          </div>
+        </div>
+        <div id="result" class="text-center text-muted mt-3"></div>
+      </div>
+    </section>
+
+
+  <!-- Footer -->
+  <footer class="bg-transparent text-black text-center py-3 mt-5">
+    <p>© 2024 eBau Plan-Detector. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+  <script src="/static/script.js"></script>
+</body>
+</html>

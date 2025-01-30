@@ -1,0 +1,29 @@
+# macOS Systemdateien
+.DS_Store
+
+# PyCharm/IDEA-Projektdateien
+.idea/
+*.iml
+
+# Python Cache-Dateien
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtuelle Umgebung (falls du eine nutzt)
+bin/
+lib/
+
+# Modelle & große Dateien
+*.pth
+*.h5
+*.onnx
+*.weights
+
+# Unnötige Ordner
+fresh_clone/
+detectron2/
+
+# Token oder sensible Dateien
+token
